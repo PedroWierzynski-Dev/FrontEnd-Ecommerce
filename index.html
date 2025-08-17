@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ecommerce Front-End</title>
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+
+        <!-- Font Awesome -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            rel="stylesheet">
+
+        <!-- Bootstrap CSS -->
+        <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="assets/style.css" rel="stylesheet">
+
+    </head>
+    <body>
+
+        <!-- Main -->
+        <main>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container">
+                    <a class="navbar-brand fw-bold" href="#">
+                        <img src="assets/img/logo/logo-horizontal.png"
+                            alt="Logo" height="40">
+                    </a>
+                    <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Produtos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Categorias</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contato</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <section class="hero-section text-center">
+                <div class="container">
+                    <h1 class="display-4 fw-bold mb-3">Nossos Produtos</h1>
+                    <p class="lead">Descubra nossa seleção especial de produtos
+                        com qualidade excepcional</p>
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section class="products-section">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <h2 class="text-center section-title">Produtos em
+                            Destaque</h2>
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- Produto 1 -->
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div class="card product-card border-0 shadow-sm">
+                                <div class="card-image-container">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=400&h=300&fit=crop"
+                                        class="card-img-top product-image"
+                                        alt="Furadeira Impact Pro">
+                                    <div class="card-actions">
+                                        <button class="btn-favorite"
+                                            onclick="toggleFavorite(this, 'Furadeira Impact Pro')"
+                                            title="Favoritar">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="product-title">Furadeira Impact
+                                        Pro</h5>
+                                    <p class="product-description">Furadeira de
+                                        impacto profissional 800W com mandril de
+                                        13mm. Ideal para perfuração em concreto,
+                                        alvenaria e madeira.</p>
+                                    <div class="price mb-3">R$ <span
+                                            class="price-value">849,90</span></div>
+                                    <button
+                                        class="btn btn-primary btn-see-more mt-auto">Ver
+                                        Mais</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Alert Container -->
+            <div id="alertContainer" class="alert-container"></div>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <img src="assets/img/logo/logo-light.png" alt="Logo"
+                            height="70" class="mb-2">
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <p class="mb-0">Os melhores produtos com a melhor
+                            qualidade.</p>
+                    </div>
+                </div>
+                <div class="footer-divider"></div>
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center">
+                        <p class="mb-0">&copy; 2025 Todos os direitos
+                            reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="assets/script.js"> </script>
+
+        <!-- Bootstrap JS -->
+        <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
