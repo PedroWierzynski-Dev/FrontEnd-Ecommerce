@@ -1,3 +1,6 @@
+let allProducts = [];
+let currentSearchTerm = '';
+
 async function loadProducts() {
     try {
         const response = await fetch('products.json');
@@ -66,28 +69,57 @@ function createProductHTML(produto) {
     `;
 }
 
-async function renderProducts() {
+async function renderProducts(searchTerm = '') {
     const loading = document.getElementById('loading');
     const container = document.getElementById('products-container');
     const errorContainer = document.getElementById('error-container');
 
     try {
-        const produtos = await loadProducts();
+        if (allProducts.length === 0) {
+            const produtos = await loadProducts();
+            if (!produtos || produtos.length === 0) {
+                if (loading) loading.style.display = 'none';
+                if (errorContainer) {
+                    errorContainer.style.display = 'block';
+                    const errorMessage = document.getElementById('error-message');
+                    if (errorMessage) {
+                        errorMessage.textContent = 'Nenhum produto encontrado.';
+                    }
+                }
+                return;
+            }
+            allProducts = produtos;
+        }
 
         if (loading) loading.style.display = 'none';
 
-        if (!produtos || produtos.length === 0) {
-            if (errorContainer) {
-                errorContainer.style.display = 'block';
-                const errorMessage = document.getElementById('error-message');
-                if (errorMessage) {
-                    errorMessage.textContent = 'Nenhum produto encontrado.';
-                }
+        let filteredProducts = allProducts;
+        if (searchTerm) {
+            filteredProducts = allProducts.filter(produto =>
+                produto.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                produto.description_small.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                produto.category.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+        }
+
+        if (searchTerm && filteredProducts.length === 0) {
+            if (container) {
+                container.innerHTML = `
+                    <div class="col-12">
+                        <div class="no-results">
+                            <i class="fas fa-search"></i>
+                            <h3>Nenhum produto encontrado</h3>
+                            <p>Não encontramos produtos que correspondam à sua busca: "<strong>${searchTerm}</strong>"</p>
+                            <p>Tente buscar por outros termos ou navegue por todos os produtos.</p>
+                        </div>
+                    </div>
+                `;
+                container.style.display = 'flex';
             }
             return;
         }
 
-        const productsHTML = produtos.map(produto => createProductHTML(produto)).join('');
+        const productsHTML = filteredProducts.map(produto => createProductHTML(produto)).join('');
 
         if (container) {
             container.innerHTML = productsHTML;
@@ -100,7 +132,7 @@ async function renderProducts() {
             });
         }
 
-        console.log(`${produtos.length} produtos carregados com sucesso!`);
+        console.log(`${filteredProducts.length} produtos exibidos${searchTerm ? ` (filtrados por: "${searchTerm}")` : ''}!`);
 
     } catch (error) {
         console.error('Erro ao renderizar produtos:', error);
@@ -116,6 +148,39 @@ async function renderProducts() {
     }
 }
 
+function getSearchFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('search') || '';
+}
+
+function setupProductNavigation() {
+
+    document.addEventListener('click', function (e) {
+        if (e.target.classList.contains('btn-see-more')) {
+            const productId = e.target.getAttribute('data-product-id');
+            if (productId) {
+                window.location.href = `product-detail.html?id=${productId}`;
+            }
+        }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
-    renderProducts();
+    const searchTerm = getSearchFromUrl();
+
+    if (searchTerm) {
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.value = searchTerm;
+            const clearBtn = document.getElementById('clearBtn');
+            if (clearBtn) {
+                clearBtn.style.display = 'block';
+            }
+        }
+        renderProducts(searchTerm);
+    } else {
+        renderProducts();
+    }
+
+    setupProductNavigation();
 });

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Detalhes do Produto - Ecommerce</title>
+        <title>Detalhes do Produto - Ecommerce Front-End</title>
 
         <!-- Favicon -->
         <link rel="icon" type="image/x-icon" href="assets/img/logo/favicon.png">
@@ -30,6 +30,26 @@
                         <img src="assets/img/logo/logo-horizontal.png"
                             alt="Logo" height="40">
                     </a>
+
+                    <div class="search-container d-flex mx-auto"
+                        style="max-width: 400px;">
+                        <div class="input-group">
+                            <input type="text"
+                                class="form-control search-input"
+                                id="searchInput"
+                                placeholder="Buscar produtos..."
+                                autocomplete="off">
+                            <button class="btn btn-search" type="button"
+                                id="searchBtn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                            <button class="btn btn-clear" type="button"
+                                id="clearBtn" style="display: none;">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+
                     <button class="navbar-toggler" type="button"
                         data-bs-toggle="collapse" data-bs-target="#navbarNav">
                         <span class="navbar-toggler-icon"></span>
@@ -41,7 +61,8 @@
                                     href="index.html">Produtos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#contato">Contato</a>
+                                <a class="nav-link"
+                                    href="index.html#contato">Contato</a>
                             </li>
                         </ul>
                     </div>
@@ -53,40 +74,116 @@
                 <div class="container">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a
-                                    href="index.html">Home</a></li>
-                            <li class="breadcrumb-item"><a
-                                    href="index.html">Produtos</a></li>
+                            <li class="breadcrumb-item">
+                                <a href="index.html">
+                                    <i class="fas fa-home"></i> Início
+                                </a>
+                            </li>
                             <li class="breadcrumb-item active"
-                                aria-current="page"
-                                id="breadcrumbProduct">Carregando...</li>
+                                aria-current="page" id="breadcrumb-category">
+                                Carregando...
+                            </li>
+                            <li class="breadcrumb-item active"
+                                aria-current="page" id="breadcrumb-product">
+                                Carregando...
+                            </li>
                         </ol>
                     </nav>
                 </div>
             </section>
 
-            <!-- Product Detail Section -->
-            <section class="product-detail-section">
-                <div class="container">
-                    <div class="row" id="productDetailContainer">
-                        <!-- Product details will be loaded here -->
-                    </div>
+            <div id="loading" class="text-center my-5">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Carregando...</span>
+                </div>
+                <p class="mt-2">Carregando produto...</p>
+            </div>
 
-                    <!-- Product not found -->
-                    <div class="row justify-content-center" id="productNotFound"
-                        style="display: none;">
-                        <div class="col-md-6 text-center">
-                            <i
-                                class="fas fa-exclamation-triangle fa-3x text-warning mb-3"></i>
-                            <h4 class="text-muted">Produto não encontrado</h4>
-                            <p class="text-muted mb-4">O produto que você está
-                                procurando não foi encontrado.</p>
-                            <a href="index.html" class="btn btn-primary">Voltar
-                                aos Produtos</a>
+            <section class="product-detail-section" id="product-detail"
+                style="display: none;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="product-images">
+                                <div class="main-image-container">
+                                    <img id="main-product-image" src alt
+                                        class="img-fluid main-product-image">
+                                    <button class="btn-favorite-detail"
+                                        id="favorite-btn" title="Favoritar">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+
+                                <div class="image-carousel mt-4">
+                                    <div class="carousel-container">
+                                        <button class="carousel-btn prev-btn"
+                                            id="prevBtn">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <div class="carousel-images"
+                                            id="carousel-images">
+                                        </div>
+                                        <button class="carousel-btn next-btn"
+                                            id="nextBtn">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-12">
+                            <div class="product-info">
+                                <div class="product-category">
+                                    <span class="badge category-badge"
+                                        id="product-category"></span>
+                                </div>
+
+                                <h1 class="product-title-detail"
+                                    id="product-title"></h1>
+
+                                <div class="product-price-detail">
+                                    <span class="currency">R$</span>
+                                    <span class="price-value"
+                                        id="product-price"></span>
+                                </div>
+
+                                <div class="product-description-detail">
+                                    <h3>Descrição</h3>
+                                    <p id="product-description"></p>
+                                </div>
+
+                                <div class="product-actions">
+                                    <button
+                                        class="btn btn-primary btn-add-cart">
+                                        <i class="fas fa-shopping-cart"></i>
+                                        Adicionar ao Carrinho
+                                    </button>
+
+                                    <button class="btn btn-secondary btn-share"
+                                        onclick="shareProduct()">
+                                        <i class="fas fa-share-alt mr-1"></i>
+                                        Compartilhar
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <!-- Error State -->
+            <div id="error-container" class="container my-5"
+                style="display: none;">
+                <div class="alert alert-danger text-center">
+                    <h4>Produto não encontrado</h4>
+                    <p>O produto que você está procurando não existe ou foi
+                        removido.</p>
+                    <a href="index.html" class="btn btn-primary">
+                        <i class="fas fa-arrow-left"></i> Voltar para Produtos
+                    </a>
+                </div>
+            </div>
 
             <!-- Alert Container -->
             <div id="alertContainer" class="alert-container"></div>
@@ -118,8 +215,10 @@
             </div>
         </footer>
 
-        <!-- Scripts -->
         <script src="assets/js/script.js"></script>
+        <script src="assets/js/product-detail.js"></script>
+
+        <!-- Bootstrap JS -->
         <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

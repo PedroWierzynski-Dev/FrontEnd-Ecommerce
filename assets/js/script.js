@@ -84,6 +84,99 @@ function copyToClipboard(text) {
         document.body.removeChild(textArea);
     }
 }
+
+function initializeSearch() {
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const clearBtn = document.getElementById('clearBtn');
+
+    if (!searchInput || !searchBtn || !clearBtn) return;
+
+    let searchTimeout;
+    searchInput.addEventListener('input', function () {
+        const searchTerm = this.value.trim();
+
+        if (searchTerm) {
+            clearBtn.style.display = 'block';
+        } else {
+            clearBtn.style.display = 'none';
+        }
+
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+            currentSearchTerm = searchTerm;
+            renderProducts(searchTerm);
+        }, 300);
+    });
+
+    searchBtn.addEventListener('click', function () {
+        const searchTerm = searchInput.value.trim();
+        currentSearchTerm = searchTerm;
+        renderProducts(searchTerm);
+    });
+
+    searchInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            const searchTerm = this.value.trim();
+            currentSearchTerm = searchTerm;
+            renderProducts(searchTerm);
+        }
+    });
+
+    clearBtn.addEventListener('click', function () {
+        searchInput.value = '';
+        this.style.display = 'none';
+        currentSearchTerm = '';
+        renderProducts('');
+        searchInput.focus();
+    });
+}
+
+
+function initializeSearchDetail() {
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const clearBtn = document.getElementById('clearBtn');
+
+    if (!searchInput || !searchBtn || !clearBtn) return;
+
+    searchBtn.addEventListener('click', function () {
+        const searchTerm = searchInput.value.trim();
+        if (searchTerm) {
+            window.location.href = `index.html?search=${encodeURIComponent(searchTerm)}`;
+        }
+    });
+
+    searchInput.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            const searchTerm = this.value.trim();
+            if (searchTerm) {
+                window.location.href = `index.html?search=${encodeURIComponent(searchTerm)}`;
+            }
+        }
+    });
+
+    searchInput.addEventListener('input', function () {
+        const searchTerm = this.value.trim();
+        if (searchTerm) {
+            clearBtn.style.display = 'block';
+        } else {
+            clearBtn.style.display = 'none';
+        }
+    });
+
+    clearBtn.addEventListener('click', function () {
+        searchInput.value = '';
+        this.style.display = 'none';
+        searchInput.focus();
+    });
+}
+
+function isDetailPage() {
+    return window.location.pathname.includes('product-detail.html');
+}
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const observerOptions = {
         threshold: 0.1,
@@ -101,4 +194,10 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.product-card').forEach(card => {
         observer.observe(card);
     });
+
+    if (isDetailPage()) {
+        initializeSearchDetail();
+    } else {
+        initializeSearch();
+    }
 });

@@ -2,6 +2,8 @@
     {
         "id": 1,
         "image": "https://cdn.awsli.com.br/2500x2500/2657/2657296/produto/264090135/furadeira-impacto-1-2-127v-600w-tramontina-42410011-1a7cd405-cmdfkfymb7.jpg",
+        "image2": "https://static.hayapek.com.br/produtos/79458/2000/1.webp",
+        "image3": "https://a-static.mlcdn.com.br/800x560/furadeira-de-impacto-1-2-600w-th-id-600e-einhell/palaciodas-ferramentas/78123/9f1960ef31f9be182eba97bb4a587bd3.jpeg",
         "title": "Furadeira de Impacto 600W",
         "description_small": "Furadeira elétrica com função impacto.",
         "description_full": "Furadeira de impacto 600W, ideal para trabalhos em madeira, metal e alvenaria. Possui empunhadura ergonômica, controle de velocidade e mandril de 13mm.",
@@ -11,6 +13,8 @@
     {
         "id": 2,
         "image": "https://a-static.mlcdn.com.br/1500x1500/parafusadeira-furadeira-12v-com-1-bateria-maleta-e-24-acessorios-fasterr-fst006/ddmaquinas/04483/a9b0b4b9712ccee61555ae4f58f6211d.jpeg",
+        "image2": "https://ferramentasgerais.vteximg.com.br/arquivos/ids/841237/Furadeira-Parafusadeira-Bateria-3-8-12V-PFV012-Bivolt---VONDER---6001012000---VONDER.jpg?v=638688464031630000",
+        "image3": "https://hiperfer.cdn.magazord.com.br/img/2023/06/produto/13403/14725-parafusadeira-furadeira-a-bateria-12v-bivolt-automatica-pfv-120-vonder.jpg?ims=500x500",
         "title": "Parafusadeira Bateria 12V",
         "description_small": "Compacta e leve para pequenos reparos.",
         "description_full": "Parafusadeira com bateria de 12V, carregamento rápido, duas velocidades e luz de LED integrada para melhor visibilidade em locais escuros.",
@@ -20,6 +24,8 @@
     {
         "id": 3,
         "image": "https://images.cws.digital/produtos/gg/55/73/serra-circular-7-14-6517355-1562341504570.jpg",
+        "image2": "https://io.convertiez.com.br/m/piresmartins/shop/products/images/16244/big/serra-circular-7-1-4-cs1004-1400w-black-e-decker_6520.jpg",
+        "image3": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCRtV8QMF0hxZs5du0eHMP7ajynqxwq7tHTA&s",
         "title": "Serra Circular 1400W",
         "description_small": "Serra para cortes rápidos e precisos.",
         "description_full": "Serra circular de 1400W, com lâmina de 185mm e ajuste de profundidade e ângulo de corte. Ideal para madeira, MDF e compensado.",
@@ -29,6 +35,8 @@
     {
         "id": 4,
         "image": "https://i.zst.com.br/thumbs/51/38/18/-1529986281.jpg",
+        "image2": "https://images.tcdn.com.br/img/img_prod/1168655/martelete_rotativo_e_rompedor_sds_plus_1500w_110v_ingco_8083_1_a2f8e0a506551cd654aa2c955d94dd0a.jpg",
+        "image3": "https://images.cws.digital/produtos/gg/00/66/martelete-perfurador-rompedor-5-joules-wmp-1500-2-1500w-220v-7486600-1677871384830.jpg",
         "title": "Martelete 1500W",
         "description_small": "Ferramenta potente para demolição.",
         "description_full": "Martele  de 1500W, com energia de impacto de 45J, indicada para quebra de concreto, pisos e estruturas robustas.",
@@ -38,6 +46,8 @@
     {
         "id": 5,
         "image": "https://images.tcdn.com.br/img/img_prod/828968/pa_bico_c_cabo_n_4_3599_1_a26bfbc963e7163a000ae4d71907e6ad.png",
+        "image2": "https://construmarques.fbitsstatic.net/img/p/pa-de-bico-tramontina-em-aco-com-cabo-em-madeira-71cm-460-30-74735/261220.jpg?v=no-value",
+        "image3": "https://forceline.jetassets.com.br/produto/multifotos/hd/20190215162902_2609997391_DZ.jpg",
         "title": "Pá de Construção",
         "description_small": "Pá robusta para uso geral.",
         "description_full": "Pá de aço carbono com cabo de madeira de 120cm, ideal para movimentação de areia, terra, cimento e entulho.",
@@ -47,6 +57,8 @@
     {
         "id": 6,
         "image": "https://cdn.awsli.com.br/600x450/1606/1606237/produto/60689468/1151ee43-0f50-41fe-9ad8-5724b2840597-(2)-479c74984f.jpg",
+        "image2": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWZk_sXzupKB7UJU002vQOX2JRI4wncRfgCA&s",
+        "image3": "https://www.333obra.com.br/media/catalog/product/c/i/cimento_votoran_50kg_1.jpg?optimize=high&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700",
         "title": "Saco de Cimento 50kg",
         "description_small": "Cimento de alta resistência estrutural.",
         "description_full": "Cimento Portland de 50kg, ideal para concretagem, reboco e assentamento de blocos e tijolos, com excelente durabilidade.",
@@ -56,6 +68,8 @@
     {
         "id": 7,
         "image": "https://cdn.awsli.com.br/600x450/1224/1224098/produto/64494946/570739b961.jpg",
+        "image2": "https://xg1e7cnw4i.execute-api.us-east-1.amazonaws.com/image/cemaco/image/catalog/product/fit-in/500x500/31808.jpg",
+        "image3": "https://images.cws.digital/produtos/gg/34/74/argamassa-ac-ii-externa-aditivada-20kg-cinza-8127434-1650631330862.jpg",
         "title": "Argamassa AC-II 20kg",
         "description_small": "Indicada para assentamento de cerâmicas.",
         "description_full": "Argamassa colante tipo AC-II, saco de 20kg, indicada para revestimentos cerâmicos em áreas internas e externas.",
@@ -65,6 +79,8 @@
     {
         "id": 8,
         "image": "https://img.lojadomecanico.com.br/256/2/253/124460/Martelo-de-Unha-27-mm-Extra-Fortis-com-C-tramontina-407002271.JPG",
+        "image2": "https://eletrorastro.fbitsstatic.net/img/p/martelo-unha-27mm-vonder-80167/267270.jpg?w=800&h=800&v=no-change&qs=ignore",
+        "image3": "https://images.tcdn.com.br/img/img_prod/1018104/martelo_unha_27mm_polido_com_cabo_de_madeira_envernizada_tramontina_213821_1_213588d7f7c119dc268d973891087fd5.jpg",
         "title": "Martelo Unha 27mm",
         "description_small": "Martelo para uso geral em carpintaria.",
         "description_full": "Martelo de unha com cabeça em aço temperado e cabo de madeira resistente. Ideal para pregar, arrancar pregos e pequenos reparos.",
@@ -74,6 +90,8 @@
     {
         "id": 9,
         "image": "https://cdn.b4c.inf.br/storage/minasferramentas/1000/chave-inglesa-cromada-abertura-34mm-ac-12-tramontina-41016512163196700525.jpg",
+        "image2": "https://diafer.vtexassets.com/arquivos/ids/193279-800-auto?v=638757359443200000&width=800&height=auto&aspect=true",
+        "image3": "https://cdn.leroymerlin.com.br/products/chave_inglesa_12__300mm__mtx_90057485_0001_600x600.jpg",
         "title": "Chave Inglesa 12”",
         "description_small": "Chave ajustável multiuso.",
         "description_full": "Chave inglesa de 12 polegadas, fabricada em aço forjado de alta resistência, ideal para ajuste de porcas e parafusos de diferentes tamanhos.",
@@ -83,6 +101,8 @@
     {
         "id": 10,
         "image": "https://cdn.awsli.com.br/800x800/32/32727/produto/250352650/escada-5-degraus-ynth40uuzb.jpg",
+        "image2": "https://images.tcdn.com.br/img/img_prod/760588/escada_aluminio_5_degraus_sba_599_1_de4065bc0de84e238359db74542533c3.jpg",
+        "image3": "https://images.tcdn.com.br/img/img_prod/1100542/escada_domestica_em_aluminio_5_degraus_real_escadas_13663_1_4eb79424e771018689a37764c39b8efa.jpg",
         "title": "Escada Alumínio 5 Degraus",
         "description_small": "Escada leve e resistente.",
         "description_full": "Escada de alumínio com 5 degraus antiderrapantes, dobrável, suporta até 120kg, ideal para serviços domésticos e profissionais.",
