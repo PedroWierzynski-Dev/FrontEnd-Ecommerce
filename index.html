@@ -28,31 +28,45 @@
 
     </head>
     <body>
+        <!-- Skip Link para navegação por teclado -->
+        <a href="#main-content"
+            class="skip-link visually-hidden-focusable">Pular para o conteúdo
+            principal</a>
+
         <!-- Loader Interativo -->
-        <div id="interactiveLoader" class="interactive-loader">
+        <div id="interactiveLoader" class="interactive-loader"
+            aria-hidden="true">
             <div class="interactive-loader-container">
                 <div class="interactive-loader-logo">
                     <img src="assets/img/logo/logo-light-single.png" width="75"
                         height="75"
-                        alt="Logo" class="img-fluid">
+                        alt="ManuTools - Logotipo da empresa" class="img-fluid">
                 </div>
-                <h1 class="interactive-loader-title">ManuTools</h1>
+                <div class="interactive-loader-title" role="heading"
+                    aria-level="2">ManuTools</div>
                 <p class="interactive-loader-subtitle">Preparando sua
                     experiência de compra...</p>
 
                 <div class="interactive-progress-container">
                     <div class="interactive-progress-bar"
-                        id="interactiveProgressBar"></div>
+                        id="interactiveProgressBar"
+                        role="progressbar"
+                        aria-valuenow="0"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        aria-label="Progresso do carregamento"></div>
                 </div>
 
                 <div class="interactive-progress-text">
                     <span class="interactive-loading-message"
-                        id="interactiveLoadingMessage">Inicializando...</span>
+                        id="interactiveLoadingMessage"
+                        aria-live="polite">Inicializando...</span>
                     <span class="interactive-progress-percentage"
-                        id="interactiveProgressPercentage">0%</span>
+                        id="interactiveProgressPercentage"
+                        aria-label="Porcentagem do progresso">0%</span>
                 </div>
 
-                <div class="loading-dots">
+                <div class="loading-dots" aria-hidden="true">
                     <div class="loading-dot"></div>
                     <div class="loading-dot"></div>
                     <div class="loading-dot"></div>
@@ -60,99 +74,149 @@
             </div>
         </div>
 
-        <!-- Main -->
-        <main>
-            <nav class="navbar navbar-expand-lg navbar-dark">
+        <!-- Header Navigation -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark" role="navigation"
+                aria-label="Navegação principal">
                 <div class="container">
-                    <a class="navbar-brand fw-bold" href="#">
+                    <a class="navbar-brand fw-bold" href="#"
+                        aria-label="ManuTools - Página inicial">
                         <img src="assets/img/logo/logo-horizontal.png"
-                            alt="Logo" height="40">
+                            alt="ManuTools - Produtos de qualidade excepcional"
+                            height="40">
                     </a>
 
                     <div class="search-container d-flex mx-auto"
-                        style="max-width: 400px;">
+                        style="max-width: 400px;" role="search">
                         <div class="input-group">
+                            <label for="searchInput"
+                                class="visually-hidden">Buscar produtos</label>
                             <input type="text"
                                 class="form-control search-input"
                                 id="searchInput"
                                 placeholder="Buscar produtos..."
-                                autocomplete="off">
+                                autocomplete="off"
+                                aria-describedby="search-help">
+                            <div id="search-help" class="visually-hidden">
+                                Digite o nome do produto que deseja encontrar e
+                                pressione Enter ou clique no botão de busca
+                            </div>
                             <button class="btn btn-search" type="button"
-                                id="searchBtn">
-                                <i class="fas fa-search"></i>
+                                id="searchBtn"
+                                aria-label="Executar busca">
+                                <i class="fas fa-search" aria-hidden="true"></i>
                             </button>
                             <button class="btn btn-clear" type="button"
-                                id="clearBtn" style="display: none;">
-                                <i class="fas fa-times"></i>
+                                id="clearBtn"
+                                style="display: none;"
+                                aria-label="Limpar campo de busca">
+                                <i class="fas fa-times" aria-hidden="true"></i>
                             </button>
                         </div>
                     </div>
 
                     <button class="navbar-toggler" type="button"
-                        data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Alternar menu de navegação">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#">Produtos</a>
+                        <ul class="navbar-nav ms-auto" role="menubar">
+                            <li class="nav-item" role="none">
+                                <a class="nav-link active"
+                                    href="#"
+                                    role="menuitem"
+                                    aria-current="page">Produtos</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#contato">Contato</a>
+                            <li class="nav-item" role="none">
+                                <a class="nav-link"
+                                    href="#contato"
+                                    role="menuitem">Contato</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
+        </header>
 
-            <section class="hero-section text-center">
+        <!-- Main Content -->
+        <main id="main-content">
+            <section class="hero-section text-center"
+                aria-labelledby="hero-title">
                 <div class="container">
-                    <h1 class="display-4 fw-bold mb-3">Nossos Produtos</h1>
+                    <h1 id="hero-title" class="display-4 fw-bold mb-3">Nossos
+                        Produtos</h1>
                     <p class="lead">Descubra nossa seleção especial de produtos
                         com qualidade excepcional</p>
                 </div>
             </section>
 
             <!-- Products Section -->
-            <section class="products-section">
+            <section class="products-section" aria-labelledby="products-title">
                 <div class="container">
                     <div class="row justify-content-center">
-                        <h2 class="text-center section-title">Produtos em
+                        <h2 id="products-title"
+                            class="text-center section-title">Produtos em
                             Destaque</h2>
                     </div>
 
-                    <div id="loading" class="text-center my-5">
-                        <div class="spinner-border text-primary" role="status">
+                    <div id="loading" class="text-center my-5"
+                        aria-live="polite">
+                        <div class="spinner-border text-primary"
+                            role="status"
+                            aria-label="Carregando produtos">
                             <span class="visually-hidden">Carregando...</span>
                         </div>
                         <p class="mt-2">Carregando produtos...</p>
                     </div>
 
-                    <div id="products-container" class="row g-4"
-                        style="display: none;">
+                    <div id="products-container"
+                        class="row g-4"
+                        style="display: none;"
+                        aria-live="polite"
+                        aria-label="Lista de produtos">
                     </div>
 
-                    <div id="error-container" class="col-12"
-                        style="display: none;">
+                    <div id="error-container"
+                        class="col-12"
+                        style="display: none;"
+                        role="alert"
+                        aria-live="assertive">
                         <div class="alert alert-danger text-center">
-                            <h4>Erro ao carregar produtos</h4>
+                            <h3>Erro ao carregar produtos</h3>
                             <p id="error-message">Não foi possível carregar os
                                 produtos. Tente novamente mais tarde.</p>
                             <button class="btn btn-outline-danger mt-2"
-                                onclick="renderProducts()">
-                                <i class="fas fa-sync-alt"></i> Tentar Novamente
+                                onclick="renderProducts()"
+                                aria-describedby="error-retry-help">
+                                <i class="fas fa-sync-alt"
+                                    aria-hidden="true"></i> Tentar Novamente
                             </button>
+                            <div id="error-retry-help" class="visually-hidden">
+                                Clique para tentar carregar os produtos
+                                novamente
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- Alert Container -->
-            <div id="alertContainer" class="alert-container"></div>
+            <div id="alertContainer"
+                class="alert-container"
+                aria-live="polite"
+                aria-atomic="true"></div>
 
-            <div id="navigationLoader" class="navigation-loader">
+            <div id="navigationLoader"
+                class="navigation-loader"
+                aria-hidden="true">
                 <div class="navigation-loader-content">
-                    <div class="navigation-loader-spinner"></div>
+                    <div class="navigation-loader-spinner"
+                        role="status"
+                        aria-label="Carregando produto"></div>
                     <div class="navigation-loader-text">Carregando
                         produto...</div>
                     <div class="navigation-loader-subtitle">Aguarde um
@@ -160,20 +224,43 @@
                 </div>
             </div>
         </main>
-        <footer class="footer" id="contato">
+
+        <footer class="footer" id="contato" role="contentinfo"
+            aria-labelledby="footer-title">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <img src="assets/img/logo/logo-light.png" alt="Logo"
-                            height="70" class="mb-2">
+                        <img src="assets/img/logo/logo-light.png"
+                            alt="ManuTools - Os melhores produtos com a melhor qualidade"
+                            height="70"
+                            class="mb-2">
                         <p class="mb-0">Os melhores produtos com a melhor
                             qualidade.</p>
                     </div>
                     <div class="col-md-6 text-lg-end text-start mt-3 mt-lg-0">
-                        <ul class="list-unstyled mb-0 ">
-                            <li>Email: pedrohwierzynski@gmail.com</li>
-                            <li>Telefone: (41) 9 8746-8102</li>
-                        </ul>
+                        <h2 id="footer-title"
+                            class="visually-hidden">Informações de Contato</h2>
+                        <address>
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <i class="fas fa-envelope"
+                                        aria-hidden="true"></i>
+                                    Email: <a
+                                        href="mailto:pedrohwierzynski@gmail.com"
+                                        aria-label="Enviar email para pedrohwierzynski@gmail.com">
+                                        pedrohwierzynski@gmail.com
+                                    </a>
+                                </li>
+                                <li>
+                                    <i class="fas fa-phone"
+                                        aria-hidden="true"></i>
+                                    Telefone: <a href="tel:+5541987468102"
+                                        aria-label="Ligar para (41) 9 8746-8102">
+                                        (41) 9 8746-8102
+                                    </a>
+                                </li>
+                            </ul>
+                        </address>
                     </div>
                 </div>
                 <div class="footer-divider"></div>
@@ -186,8 +273,8 @@
             </div>
         </footer>
 
-        <script src="assets/js/script.js"> </script>
-        <script src="assets/js/products.js"> </script>
+        <script src="assets/js/script.js"></script>
+        <script src="assets/js/products.js"></script>
 
         <!-- Bootstrap JS -->
         <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>

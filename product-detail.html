@@ -27,69 +27,105 @@
 
     </head>
     <body>
-        <!-- Main -->
-        <main>
-            <nav class="navbar navbar-expand-lg navbar-dark">
+        <!-- Skip Link para navegação por teclado -->
+        <a href="#main-content"
+            class="skip-link visually-hidden-focusable">Pular para o conteúdo
+            principal</a>
+
+        <!-- Header Navigation -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark" role="navigation"
+                aria-label="Navegação principal">
                 <div class="container">
-                    <a class="navbar-brand fw-bold" href="index.html">
+                    <a class="navbar-brand fw-bold" href="index.html"
+                        aria-label="ManuTools - Voltar à página inicial">
                         <img src="assets/img/logo/logo-horizontal.png"
-                            alt="Logo" height="40">
+                            alt="ManuTools - Produtos de qualidade excepcional"
+                            height="40">
                     </a>
 
                     <div class="search-container d-flex mx-auto"
-                        style="max-width: 400px;">
+                        style="max-width: 400px;" role="search">
                         <div class="input-group">
+                            <label for="searchInput"
+                                class="visually-hidden">Buscar produtos</label>
                             <input type="text"
                                 class="form-control search-input"
                                 id="searchInput"
                                 placeholder="Buscar produtos..."
-                                autocomplete="off">
+                                autocomplete="off"
+                                aria-describedby="search-help">
+                            <div id="search-help" class="visually-hidden">
+                                Digite o nome do produto que deseja encontrar e
+                                pressione Enter ou clique no botão de busca
+                            </div>
                             <button class="btn btn-search" type="button"
-                                id="searchBtn">
-                                <i class="fas fa-search"></i>
+                                id="searchBtn"
+                                aria-label="Executar busca">
+                                <i class="fas fa-search" aria-hidden="true"></i>
                             </button>
                             <button class="btn btn-clear" type="button"
-                                id="clearBtn" style="display: none;">
-                                <i class="fas fa-times"></i>
+                                id="clearBtn"
+                                style="display: none;"
+                                aria-label="Limpar campo de busca">
+                                <i class="fas fa-times" aria-hidden="true"></i>
                             </button>
                         </div>
                     </div>
 
                     <button class="navbar-toggler" type="button"
-                        data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Alternar menu de navegação">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
+                        <ul class="navbar-nav ms-auto" role="menubar">
+                            <li class="nav-item" role="none">
                                 <a class="nav-link"
-                                    href="index.html">Produtos</a>
+                                    href="index.html"
+                                    role="menuitem">Produtos</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item" role="none">
                                 <a class="nav-link"
-                                    href="index.html#contato">Contato</a>
+                                    href="index.html#contato"
+                                    role="menuitem">Contato</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
+        </header>
 
+        <!-- Main Content -->
+        <main id="main-content">
             <!-- Breadcrumb -->
-            <section class="breadcrumb-section">
+            <section class="breadcrumb-section"
+                aria-labelledby="breadcrumb-title">
                 <div class="container">
-                    <nav aria-label="breadcrumb">
+                    <h2 id="breadcrumb-title"
+                        class="visually-hidden">Localização na navegação</h2>
+                    <nav aria-label="Navegação estrutural (breadcrumb)">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="index.html">
-                                    <i class="fas fa-home"></i> Início
+                                <a href="index.html"
+                                    aria-label="Voltar à página inicial">
+                                    <i class="fas fa-home"
+                                        aria-hidden="true"></i> Início
                                 </a>
                             </li>
                             <li class="breadcrumb-item active"
-                                aria-current="page" id="breadcrumb-category">
+                                aria-current="page"
+                                id="breadcrumb-category"
+                                aria-live="polite">
                                 Carregando...
                             </li>
                             <li class="breadcrumb-item active"
-                                aria-current="page" id="breadcrumb-product">
+                                aria-current="page"
+                                id="breadcrumb-product"
+                                aria-live="polite">
                                 Carregando...
                             </li>
                         </ol>
@@ -97,40 +133,65 @@
                 </div>
             </section>
 
-            <div id="loading" class="text-center my-5">
-                <div class="spinner-border text-primary" role="status">
+            <div id="loading" class="text-center my-5" aria-live="polite">
+                <div class="spinner-border text-primary"
+                    role="status"
+                    aria-label="Carregando detalhes do produto">
                     <span class="visually-hidden">Carregando...</span>
                 </div>
                 <p class="mt-2">Carregando produto...</p>
             </div>
 
-            <section class="product-detail-section" id="product-detail"
-                style="display: none;">
+            <section class="product-detail-section"
+                id="product-detail"
+                style="display: none;"
+                aria-labelledby="product-title">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-md-12">
-                            <div class="product-images">
+                            <div class="product-images" role="group"
+                                aria-labelledby="images-title">
+                                <h2 id="images-title"
+                                    class="visually-hidden">Imagens do
+                                    produto</h2>
                                 <div class="main-image-container">
-                                    <img id="main-product-image" src alt
-                                        class="img-fluid main-product-image">
+                                    <img id="main-product-image"
+                                        src
+                                        alt
+                                        class="img-fluid main-product-image"
+                                        role="img">
                                     <button class="btn-favorite-detail"
-                                        id="favorite-btn" title="Favoritar">
-                                        <i class="far fa-heart"></i>
+                                        id="favorite-btn"
+                                        aria-label="Adicionar aos favoritos"
+                                        aria-pressed="false"
+                                        title="Favoritar produto">
+                                        <i class="far fa-heart"
+                                            aria-hidden="true"></i>
                                     </button>
                                 </div>
 
-                                <div class="image-carousel mt-4">
+                                <div class="image-carousel mt-4" role="group"
+                                    aria-labelledby="carousel-title">
+                                    <h3 id="carousel-title"
+                                        class="visually-hidden">Galeria de
+                                        imagens do produto</h3>
                                     <div class="carousel-container">
                                         <button class="carousel-btn prev-btn"
-                                            id="prevBtn">
-                                            <i class="fas fa-chevron-left"></i>
+                                            id="prevBtn"
+                                            aria-label="Imagem anterior">
+                                            <i class="fas fa-chevron-left"
+                                                aria-hidden="true"></i>
                                         </button>
                                         <div class="carousel-images"
-                                            id="carousel-images">
+                                            id="carousel-images"
+                                            role="tablist"
+                                            aria-label="Miniaturas das imagens">
                                         </div>
                                         <button class="carousel-btn next-btn"
-                                            id="nextBtn">
-                                            <i class="fas fa-chevron-right"></i>
+                                            id="nextBtn"
+                                            aria-label="Próxima imagem">
+                                            <i class="fas fa-chevron-right"
+                                                aria-hidden="true"></i>
                                         </button>
                                     </div>
                                 </div>
@@ -141,58 +202,88 @@
                             <div class="product-info">
                                 <div class="product-category">
                                     <span class="badge category-badge"
-                                        id="product-category"></span>
+                                        id="product-category"
+                                        aria-label="Categoria do produto"></span>
                                 </div>
 
                                 <h1 class="product-title-detail"
                                     id="product-title"></h1>
 
-                                <div class="product-price-detail">
-                                    <span class="currency">R$</span>
+                                <div class="product-price-detail" role="group"
+                                    aria-labelledby="price-title">
+                                    <h2 id="price-title"
+                                        class="visually-hidden">Preço do
+                                        produto</h2>
+                                    <span class="currency"
+                                        aria-hidden="true">R$</span>
                                     <span class="price-value"
-                                        id="product-price"></span>
+                                        id="product-price"
+                                        aria-label="Preço em reais"></span>
                                 </div>
 
-                                <div class="rating-section">
-                                    <h3><i class="fas fa-star"></i>
-                                        Avaliações do Produto</h3>
+                                <section class="rating-section"
+                                    aria-labelledby="rating-title">
+                                    <h2 id="rating-title"><i class="fas fa-star"
+                                            aria-hidden="true"></i>
+                                        Avaliações do Produto</h2>
                                     <div class="current-rating">
                                         <div class="rating-display">
                                             <div class="stars-large"
-                                                id="current-stars">
+                                                id="current-stars"
+                                                role="img"
+                                                aria-label="Avaliação atual do produto">
                                             </div>
                                             <div class="rating-summary">
                                                 <div class="rating-average"
-                                                    id="rating-average">0.0</div>
+                                                    id="rating-average"
+                                                    aria-label="Média das avaliações">0.0</div>
                                                 <div class="rating-count"
-                                                    id="rating-count">Nenhuma
+                                                    id="rating-count"
+                                                    aria-label="Número total de avaliações">Nenhuma
                                                     avaliação</div>
                                             </div>
                                         </div>
                                         <div class="rating-distribution"
-                                            id="rating-distribution">
+                                            id="rating-distribution"
+                                            aria-label="Distribuição das avaliações por estrelas">
                                         </div>
                                     </div>
+                                </section>
 
-                                </div>
-
-                                <div class="product-description-detail">
-                                    <h3>Descrição</h3>
+                                <section class="product-description-detail"
+                                    aria-labelledby="description-title">
+                                    <h2 id="description-title">Descrição</h2>
                                     <p id="product-description"></p>
-                                </div>
+                                </section>
 
-                                <div class="product-actions">
-                                    <button
-                                        class="btn btn-primary btn-add-cart">
-                                        <i class="fas fa-shopping-cart"></i>
+                                <div class="product-actions" role="group"
+                                    aria-labelledby="actions-title">
+                                    <h2 id="actions-title"
+                                        class="visually-hidden">Ações do
+                                        produto</h2>
+                                    <button class="btn btn-primary btn-add-cart"
+                                        aria-describedby="cart-help">
+                                        <i class="fas fa-shopping-cart"
+                                            aria-hidden="true"></i>
                                         Adicionar ao Carrinho
                                     </button>
+                                    <div id="cart-help" class="visually-hidden">
+                                        Clique para adicionar este produto ao
+                                        seu carrinho de compras
+                                    </div>
 
                                     <button class="btn btn-secondary btn-share"
-                                        onclick="shareProduct()">
-                                        <i class="fas fa-share-alt mr-1"></i>
+                                        onclick="shareProduct()"
+                                        aria-describedby="share-help">
+                                        <i class="fas fa-share-alt mr-1"
+                                            aria-hidden="true"></i>
                                         Compartilhar
                                     </button>
+                                    <div id="share-help"
+                                        class="visually-hidden">
+                                        Clique para compartilhar este produto em
+                                        redes sociais
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -200,50 +291,126 @@
                     <div
                         class="row align-items-center mt-5 justify-content-center">
                         <div class="col-lg-9 com-sm-12">
-                            <div class="product-rating-detail">
+                            <section class="product-rating-detail"
+                                aria-labelledby="user-rating-title">
                                 <div class="rate-product">
                                     <div class="row">
                                         <div class="col-lg-6 col-sm-12">
-                                            <h4>Avaliar este produto:</h4>
+                                            <h3 id="user-rating-title">Avaliar
+                                                este produto:</h3>
                                             <div class="rating-input">
-                                                <div class="stars-interactive"
-                                                    id="rating-stars">
-                                                    <i class="fas fa-star star"
-                                                        data-rating="1"></i>
-                                                    <i class="fas fa-star star"
-                                                        data-rating="2"></i>
-                                                    <i class="fas fa-star star"
-                                                        data-rating="3"></i>
-                                                    <i class="fas fa-star star"
-                                                        data-rating="4"></i>
-                                                    <i class="fas fa-star star"
-                                                        data-rating="5"></i>
+                                                <fieldset
+                                                    class="stars-interactive"
+                                                    id="rating-stars"
+                                                    role="radiogroup"
+                                                    aria-labelledby="user-rating-title"
+                                                    aria-describedby="rating-instructions">
+                                                    <legend
+                                                        class="visually-hidden">Selecione
+                                                        sua avaliação de 1 a 5
+                                                        estrelas</legend>
+                                                    <input type="radio"
+                                                        name="rating" value="1"
+                                                        id="star-1"
+                                                        class="visually-hidden">
+                                                    <label for="star-1"
+                                                        class="fas fa-star star"
+                                                        data-rating="1"
+                                                        tabindex="0"
+                                                        role="radio"
+                                                        aria-checked="false"
+                                                        aria-label="1 estrela - Muito ruim"></label>
+
+                                                    <input type="radio"
+                                                        name="rating" value="2"
+                                                        id="star-2"
+                                                        class="visually-hidden">
+                                                    <label for="star-2"
+                                                        class="fas fa-star star"
+                                                        data-rating="2"
+                                                        tabindex="0"
+                                                        role="radio"
+                                                        aria-checked="false"
+                                                        aria-label="2 estrelas - Ruim"></label>
+
+                                                    <input type="radio"
+                                                        name="rating" value="3"
+                                                        id="star-3"
+                                                        class="visually-hidden">
+                                                    <label for="star-3"
+                                                        class="fas fa-star star"
+                                                        data-rating="3"
+                                                        tabindex="0"
+                                                        role="radio"
+                                                        aria-checked="false"
+                                                        aria-label="3 estrelas - Regular"></label>
+
+                                                    <input type="radio"
+                                                        name="rating" value="4"
+                                                        id="star-4"
+                                                        class="visually-hidden">
+                                                    <label for="star-4"
+                                                        class="fas fa-star star"
+                                                        data-rating="4"
+                                                        tabindex="0"
+                                                        role="radio"
+                                                        aria-checked="false"
+                                                        aria-label="4 estrelas - Bom"></label>
+
+                                                    <input type="radio"
+                                                        name="rating" value="5"
+                                                        id="star-5"
+                                                        class="visually-hidden">
+                                                    <label for="star-5"
+                                                        class="fas fa-star star"
+                                                        data-rating="5"
+                                                        tabindex="0"
+                                                        role="radio"
+                                                        aria-checked="false"
+                                                        aria-label="5 estrelas - Excelente"></label>
+                                                </fieldset>
+                                                <div id="rating-instructions"
+                                                    class="visually-hidden">
+                                                    Use as setas do teclado ou
+                                                    clique para selecionar uma
+                                                    avaliação de 1 a 5 estrelas
                                                 </div>
                                                 <span class="rating-label"
-                                                    id="rating-label">Clique
+                                                    id="rating-label"
+                                                    aria-live="polite">Clique
                                                     para avaliar</span>
                                             </div>
                                         </div>
                                         <div
                                             class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-end">
                                             <button class="btn-submit-rating"
-                                                id="submit-rating" disabled>
-                                                <i
-                                                    class="fas fa-paper-plane"></i>
+                                                id="submit-rating"
+                                                disabled
+                                                aria-describedby="submit-help">
+                                                <i class="fas fa-paper-plane"
+                                                    aria-hidden="true"></i>
                                                 Enviar Avaliação
                                             </button>
+                                            <div id="submit-help"
+                                                class="visually-hidden">
+                                                Primeiro selecione uma avaliação
+                                                acima para habilitar o envio
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="rating-success"
-                                        id="rating-success">
-                                        <i
-                                            class="fas fa-check-circle"></i>
+                                        id="rating-success"
+                                        role="alert"
+                                        aria-live="assertive"
+                                        style="display: none;">
+                                        <i class="fas fa-check-circle"
+                                            aria-hidden="true"></i>
                                         <p><strong>Obrigado!</strong><br>Sua
                                             avaliação foi enviada com
                                             sucesso.</p>
                                     </div>
                                 </div>
-                            </div>
+                            </section>
                         </div>
                     </div>
                 </div>
@@ -251,23 +418,34 @@
 
             <!-- Error State -->
             <div id="error-container" class="container my-5"
-                style="display: none;">
+                style="display: none;"
+                role="alert"
+                aria-live="assertive">
                 <div class="alert alert-danger text-center">
-                    <h4>Produto não encontrado</h4>
+                    <h2>Produto não encontrado</h2>
                     <p>O produto que você está procurando não existe ou foi
                         removido.</p>
-                    <a href="index.html" class="btn btn-primary">
-                        <i class="fas fa-arrow-left"></i> Voltar para Produtos
+                    <a href="index.html" class="btn btn-primary"
+                        aria-label="Voltar à página de produtos">
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                        Voltar para Produtos
                     </a>
                 </div>
             </div>
 
             <!-- Alert Container -->
-            <div id="alertContainer" class="alert-container"></div>
+            <div id="alertContainer"
+                class="alert-container"
+                aria-live="polite"
+                aria-atomic="true"></div>
 
-            <div id="navigationLoader" class="navigation-loader">
+            <div id="navigationLoader"
+                class="navigation-loader"
+                aria-hidden="true">
                 <div class="navigation-loader-content">
-                    <div class="navigation-loader-spinner"></div>
+                    <div class="navigation-loader-spinner"
+                        role="status"
+                        aria-label="Carregando produto"></div>
                     <div class="navigation-loader-text">Carregando
                         produto...</div>
                     <div class="navigation-loader-subtitle">Aguarde um
@@ -276,20 +454,42 @@
             </div>
         </main>
 
-        <footer class="footer" id="contato">
+        <footer class="footer" id="contato" role="contentinfo"
+            aria-labelledby="footer-title">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <img src="assets/img/logo/logo-light.png" alt="Logo"
-                            height="70" class="mb-2">
+                        <img src="assets/img/logo/logo-light.png"
+                            alt="ManuTools - Os melhores produtos com a melhor qualidade"
+                            height="70"
+                            class="mb-2">
                         <p class="mb-0">Os melhores produtos com a melhor
                             qualidade.</p>
                     </div>
                     <div class="col-md-6 text-lg-end text-start mt-3 mt-lg-0">
-                        <ul class="list-unstyled mb-0 ">
-                            <li>Email: pedrohwierzynski@gmail.com</li>
-                            <li>Telefone: (41) 9 8746-8102</li>
-                        </ul>
+                        <h2 id="footer-title"
+                            class="visually-hidden">Informações de Contato</h2>
+                        <address>
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <i class="fas fa-envelope"
+                                        aria-hidden="true"></i>
+                                    Email: <a
+                                        href="mailto:pedrohwierzynski@gmail.com"
+                                        aria-label="Enviar email para pedrohwierzynski@gmail.com">
+                                        pedrohwierzynski@gmail.com
+                                    </a>
+                                </li>
+                                <li>
+                                    <i class="fas fa-phone"
+                                        aria-hidden="true"></i>
+                                    Telefone: <a href="tel:+5541987468102"
+                                        aria-label="Ligar para (41) 9 8746-8102">
+                                        (41) 9 8746-8102
+                                    </a>
+                                </li>
+                            </ul>
+                        </address>
                     </div>
                 </div>
                 <div class="footer-divider"></div>
