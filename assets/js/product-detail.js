@@ -82,7 +82,6 @@ class ProductDetailManager {
             return products;
 
         } catch (error) {
-            console.error('Erro ao carregar produtos:', error);
             this.handleError('Erro ao carregar produto. Tente novamente mais tarde.');
             return [];
         }
@@ -112,14 +111,12 @@ class ProductDetailManager {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(name)?.trim() || '';
         } catch (error) {
-            console.warn('Erro ao ler parâmetros da URL:', error);
             return '';
         }
     }
 
     formatPrice(price) {
         if (typeof price !== 'number' || isNaN(price)) {
-            console.warn('Preço inválido:', price);
             return '0,00';
         }
 
@@ -142,7 +139,6 @@ class ProductDetailManager {
             const ratings = localStorage.getItem('productRatings');
             return ratings ? JSON.parse(ratings) : {};
         } catch (error) {
-            console.warn('Erro ao ler avaliações do localStorage:', error);
             return {};
         }
     }
@@ -372,10 +368,9 @@ class ProductDetailManager {
             // Observar elementos para animações
             this.observeElements();
 
-            console.log(`✅ Produto "${product.title}" carregado com sucesso`);
+
 
         } catch (error) {
-            console.error('Erro ao renderizar produto:', error);
             this.handleError('Erro ao exibir produto');
         }
     }
@@ -438,7 +433,6 @@ class ProductDetailManager {
                     'O link do produto foi copiado para a área de transferência!');
             }
         } catch (error) {
-            console.warn('Erro ao compartilhar:', error);
             this.showAlert('error', 'Erro', 'Não foi possível compartilhar o produto.');
         }
     }
@@ -509,7 +503,6 @@ class ProductDetailManager {
             this.renderProductDetail(product);
 
         } catch (error) {
-            console.error('Erro ao carregar detalhes do produto:', error);
             this.handleError(error.message || 'Erro ao carregar produto');
         }
     }
@@ -519,7 +512,6 @@ class ProductDetailManager {
             await this.loadProductDetail();
             this.setupEventListeners();
         } catch (error) {
-            console.error('Erro na inicialização:', error);
             this.handleError('Erro ao inicializar a aplicação');
         }
     }
