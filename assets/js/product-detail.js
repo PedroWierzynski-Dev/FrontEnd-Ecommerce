@@ -59,6 +59,10 @@ function renderProductDetail(product) {
     renderImageCarousel();
 
     updateMainImage(0);
+
+    if (typeof initializeRating === 'function') {
+        initializeRating(product.id);
+    }
 }
 
 function generateProductImages(product) {
@@ -84,7 +88,7 @@ function renderImageCarousel() {
         <div class="carousel-image ${index === 0 ? 'active' : ''}" onclick="selectImage(${index})">
             <img src="${image}" 
                  alt="${currentProduct.title} - Imagem ${index + 1}" 
-                 onerror="this.src='https://placehold.co/600x400.png'">
+                 onerror="this.src='https://placehold.co/600x400/e5e5e5/999999?text=Sem+Imagem'">
         </div>
     `).join('');
 

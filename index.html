@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ecommerce Front-End</title>
+        <title>ManuTools Ecommerce - Front-End</title>
 
         <!-- Favicon -->
         <link rel="icon" type="image/x-icon" href="assets/img/logo/favicon.png">
@@ -17,10 +17,42 @@
         <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="assets/style.css" rel="stylesheet">
+        <link href="assets/css/style.css" rel="stylesheet">
+        <link href="assets/css/variables.css" rel="stylesheet">
 
     </head>
     <body>
+        <!-- Loader Interativo -->
+        <div id="interactiveLoader" class="interactive-loader">
+            <div class="interactive-loader-container">
+                <div class="interactive-loader-logo">
+                    <img src="assets/img/logo/logo-light-single.png" width="75"
+                        height="75"
+                        alt="Logo" class="img-fluid">
+                </div>
+                <h1 class="interactive-loader-title">ManuTools</h1>
+                <p class="interactive-loader-subtitle">Preparando sua
+                    experiência de compra...</p>
+
+                <div class="interactive-progress-container">
+                    <div class="interactive-progress-bar"
+                        id="interactiveProgressBar"></div>
+                </div>
+
+                <div class="interactive-progress-text">
+                    <span class="interactive-loading-message"
+                        id="interactiveLoadingMessage">Inicializando...</span>
+                    <span class="interactive-progress-percentage"
+                        id="interactiveProgressPercentage">0%</span>
+                </div>
+
+                <div class="loading-dots">
+                    <div class="loading-dot"></div>
+                    <div class="loading-dot"></div>
+                    <div class="loading-dot"></div>
+                </div>
+            </div>
+        </div>
 
         <!-- Main -->
         <main>
@@ -111,6 +143,16 @@
 
             <!-- Alert Container -->
             <div id="alertContainer" class="alert-container"></div>
+
+            <div id="navigationLoader" class="navigation-loader">
+                <div class="navigation-loader-content">
+                    <div class="navigation-loader-spinner"></div>
+                    <div class="navigation-loader-text">Carregando
+                        produto...</div>
+                    <div class="navigation-loader-subtitle">Aguarde um
+                        momento</div>
+                </div>
+            </div>
         </main>
         <footer class="footer" id="contato">
             <div class="container">
@@ -121,10 +163,10 @@
                         <p class="mb-0">Os melhores produtos com a melhor
                             qualidade.</p>
                     </div>
-                    <div class="col-md-6 text-end">
-                        <ul class="list-unstyled mb-0">
-                            <li>Email: contato@mail.com</li>
-                            <li>Telefone: (11) 9 9133-3123</li>
+                    <div class="col-md-6 text-lg-end text-start mt-3 mt-lg-0">
+                        <ul class="list-unstyled mb-0 ">
+                            <li>Email: pedrohwierzynski@gmail.com</li>
+                            <li>Telefone: (41) 9 8746-8102</li>
                         </ul>
                     </div>
                 </div>

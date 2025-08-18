@@ -176,8 +176,149 @@ function isDetailPage() {
     return window.location.pathname.includes('product-detail.html');
 }
 
+// ========================================
+// INTERACTIVE LOADER - VERSÃO CORRIGIDA
+// ========================================
+class InteractiveLoader {
+    constructor() {
+        this.loader = document.getElementById('interactiveLoader');
+        this.progressBar = document.getElementById('interactiveProgressBar');
+        this.progressPercentage = document.getElementById('interactiveProgressPercentage');
+        this.loadingMessage = document.getElementById('interactiveLoadingMessage');
+        this.progress = 0;
+        this.isLoading = false;
+        this.messages = [
+            'Inicializando sistema...',
+            'Carregando componentes...',
+            'Preparando produtos...',
+            'Configurando interface...',
+            'Finalizando carregamento...',
+            'Pronto!'
+        ];
+    }
+
+    updateProgress(percentage, customMessage = null) {
+        this.progress = Math.min(100, Math.max(0, percentage));
+
+        if (this.progressBar) {
+            this.progressBar.style.width = `${this.progress}%`;
+        }
+
+        if (this.progressPercentage) {
+            this.progressPercentage.textContent = `${Math.round(this.progress)}%`;
+        }
+
+        if (customMessage && this.loadingMessage) {
+            this.loadingMessage.textContent = customMessage;
+        } else {
+            this.updateMessage();
+        }
+    }
+
+    updateMessage() {
+        if (!this.loadingMessage) return;
+
+        const messageIndex = Math.min(
+            Math.floor((this.progress / 100) * (this.messages.length - 1)),
+            this.messages.length - 1
+        );
+
+        if (this.messages[messageIndex]) {
+            this.loadingMessage.textContent = this.messages[messageIndex];
+        }
+    }
+
+    hide() {
+        if (this.loader && this.isLoading) {
+            this.updateProgress(100, 'Concluído!');
+            setTimeout(() => {
+                this.loader.classList.add('hidden');
+                this.isLoading = false;
+            }, 800);
+        }
+    }
+
+    show() {
+        if (this.loader) {
+            this.loader.classList.remove('hidden');
+            this.updateProgress(0);
+            this.isLoading = true;
+        }
+    }
+
+    simulateLoading(duration = 3000) {
+        if (!this.isLoading) return Promise.resolve();
+
+        return new Promise((resolve) => {
+            let progress = 0;
+            const totalSteps = duration / 100; // 100ms intervals
+            const baseIncrement = 100 / totalSteps;
+            let currentStep = 0;
+
+            const interval = setInterval(() => {
+                currentStep++;
+
+                // Smooth progress with some randomization
+                if (progress < 90) {
+                    progress += baseIncrement + (Math.random() * 3);
+                } else {
+                    progress += (100 - progress) * 0.1; // Slow down near the end
+                }
+
+                this.updateProgress(Math.min(progress, 99));
+
+                if (currentStep >= totalSteps || progress >= 99) {
+                    clearInterval(interval);
+                    this.updateProgress(100, 'Concluído!');
+                    setTimeout(() => {
+                        this.hide();
+                        resolve();
+                    }, 500);
+                }
+            }, 100);
+        });
+    }
+}
+
+// Instância global do loader
+const interactiveLoader = new InteractiveLoader();
+
+class NavigationLoader {
+    constructor() {
+        this.loader = document.getElementById('navigationLoader');
+        this.isShowing = false;
+    }
+
+    show() {
+        if (this.loader && !this.isShowing) {
+            this.loader.classList.add('show');
+            this.isShowing = true;
+            // Previne scroll durante o loading
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    hide() {
+        if (this.loader && this.isShowing) {
+            this.loader.classList.remove('show');
+            this.isShowing = false;
+            // Restaura o scroll
+            document.body.style.overflow = '';
+        }
+    }
+}
+
+// Instância global do navigation loader
+const navigationLoader = new NavigationLoader();
+
 
 document.addEventListener('DOMContentLoaded', function () {
+    interactiveLoader.show();
+
+    interactiveLoader.simulateLoading(4000).then(() => {
+        console.log('Carregamento concluído!');
+    });
+
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -200,4 +341,16 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         initializeSearch();
     }
+
+    window.addEventListener('load', function () {
+        if (navigationLoader) {
+            navigationLoader.hide();
+        }
+    });
+
+    window.addEventListener('beforeunload', function () {
+        if (navigationLoader) {
+            navigationLoader.hide();
+        }
+    });
 });

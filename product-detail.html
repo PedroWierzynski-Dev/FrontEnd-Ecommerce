@@ -17,11 +17,11 @@
         <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="assets/style.css" rel="stylesheet">
+        <link href="assets/css/style.css" rel="stylesheet">
+        <link href="assets/css/variables.css" rel="stylesheet">
 
     </head>
     <body>
-
         <!-- Main -->
         <main>
             <nav class="navbar navbar-expand-lg navbar-dark">
@@ -148,6 +148,29 @@
                                         id="product-price"></span>
                                 </div>
 
+                                <div class="rating-section">
+                                    <h3><i class="fas fa-star"></i>
+                                        Avaliações do Produto</h3>
+                                    <div class="current-rating">
+                                        <div class="rating-display">
+                                            <div class="stars-large"
+                                                id="current-stars">
+                                            </div>
+                                            <div class="rating-summary">
+                                                <div class="rating-average"
+                                                    id="rating-average">0.0</div>
+                                                <div class="rating-count"
+                                                    id="rating-count">Nenhuma
+                                                    avaliação</div>
+                                            </div>
+                                        </div>
+                                        <div class="rating-distribution"
+                                            id="rating-distribution">
+                                        </div>
+                                    </div>
+
+                                </div>
+
                                 <div class="product-description-detail">
                                     <h3>Descrição</h3>
                                     <p id="product-description"></p>
@@ -165,6 +188,55 @@
                                         <i class="fas fa-share-alt mr-1"></i>
                                         Compartilhar
                                     </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="row align-items-center mt-5 justify-content-center">
+                        <div class="col-lg-9 com-sm-12">
+                            <div class="product-rating-detail">
+                                <div class="rate-product">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-sm-12">
+                                            <h4>Avaliar este produto:</h4>
+                                            <div class="rating-input">
+                                                <div class="stars-interactive"
+                                                    id="rating-stars">
+                                                    <i class="fas fa-star star"
+                                                        data-rating="1"></i>
+                                                    <i class="fas fa-star star"
+                                                        data-rating="2"></i>
+                                                    <i class="fas fa-star star"
+                                                        data-rating="3"></i>
+                                                    <i class="fas fa-star star"
+                                                        data-rating="4"></i>
+                                                    <i class="fas fa-star star"
+                                                        data-rating="5"></i>
+                                                </div>
+                                                <span class="rating-label"
+                                                    id="rating-label">Clique
+                                                    para avaliar</span>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-end">
+                                            <button class="btn-submit-rating"
+                                                id="submit-rating" disabled>
+                                                <i
+                                                    class="fas fa-paper-plane"></i>
+                                                Enviar Avaliação
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="rating-success"
+                                        id="rating-success">
+                                        <i
+                                            class="fas fa-check-circle"></i>
+                                        <p><strong>Obrigado!</strong><br>Sua
+                                            avaliação foi enviada com
+                                            sucesso.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -187,6 +259,16 @@
 
             <!-- Alert Container -->
             <div id="alertContainer" class="alert-container"></div>
+
+            <div id="navigationLoader" class="navigation-loader">
+                <div class="navigation-loader-content">
+                    <div class="navigation-loader-spinner"></div>
+                    <div class="navigation-loader-text">Carregando
+                        produto...</div>
+                    <div class="navigation-loader-subtitle">Aguarde um
+                        momento</div>
+                </div>
+            </div>
         </main>
 
         <footer class="footer" id="contato">
@@ -198,10 +280,10 @@
                         <p class="mb-0">Os melhores produtos com a melhor
                             qualidade.</p>
                     </div>
-                    <div class="col-md-6 text-end">
-                        <ul class="list-unstyled mb-0">
-                            <li>Email: contato@mail.com</li>
-                            <li>Telefone: (11) 9 9133-3123</li>
+                    <div class="col-md-6 text-lg-end text-start mt-3 mt-lg-0">
+                        <ul class="list-unstyled mb-0 ">
+                            <li>Email: pedrohwierzynski@gmail.com</li>
+                            <li>Telefone: (41) 9 8746-8102</li>
                         </ul>
                     </div>
                 </div>
@@ -216,6 +298,8 @@
         </footer>
 
         <script src="assets/js/script.js"></script>
+        <script src="assets/js/products.js"></script>
+        <script src="assets/js/rating.js"></script>
         <script src="assets/js/product-detail.js"></script>
 
         <!-- Bootstrap JS -->
