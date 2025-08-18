@@ -1,6 +1,6 @@
 /**
  * Products Manager - Gerenciador de produtos com busca e avaliações
- * @author Desenvolvedor Pedro Wierzynski
+ * @author Pedro Wierzynski
  * @version 2.0.0
  */
 
@@ -433,13 +433,17 @@ class ProductsManager {
         }
 
         try {
+            // Mostrar loader antes da navegação
             navigationLoader.show();
+
+            // Adicionar um pequeno delay para garantir que o loader seja visível
             setTimeout(() => {
                 window.location.href = `product-detail.html?id=${encodeURIComponent(productId)}`;
             }, 100);
+
         } catch (error) {
             console.error('Erro ao navegar para detalhes do produto:', error);
-            navigationLoader.hide();
+            navigationLoader.hide(); // Esconder loader em caso de erro
         }
     }
 
@@ -533,8 +537,3 @@ window.productsManager = new ProductsManager();
 // Funções globais para compatibilidade (se necessário)
 window.renderProducts = (searchTerm) => window.productsManager.search(searchTerm);
 window.reloadProducts = () => window.productsManager.reload();
-
-// Expor no console para debug
-if (typeof window !== 'undefined') {
-    window.debugProducts = () => console.log(window.productsManager.getStats());
-}

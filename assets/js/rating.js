@@ -714,9 +714,3 @@ window.initializeRating = (productId) => window.ratingsManager.initializeRating(
 window.calculateAverageRating = (productId) => window.ratingsManager.calculateAverageRating(productId);
 window.getProductRatings = (productId) => window.ratingsManager.getProductRatings(productId);
 window.generateStarsHTML = (rating, interactive) => window.ratingsManager.generateStarsHTML(rating, interactive);
-
-// Debug tools
-if (typeof window !== 'undefined') {
-    window.debugRatings = () => console.log(window.ratingsManager.getGeneralStats());
-    window.exportRatings = () => window.ratingsManager.exportRatings();
-}
