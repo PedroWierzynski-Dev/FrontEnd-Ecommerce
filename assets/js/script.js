@@ -16,7 +16,7 @@ function toggleFavorite(button, productName) {
         button.classList.add('favorited');
         icon.classList.remove('far');
         icon.classList.add('fas');
-        showAlert('success', 'Adicionado aos Favoritos', `${productName} foi adicionado à sua lista de favoritos!`);
+        showAlert('success', 'Adicionado aos Favoritos', `${productName} foi adicionado a  sua lista de favoritos!`);
     }
 }
 
@@ -51,7 +51,7 @@ function showAlert(type, title, message) {
         document.getElementById(alertId).classList.add('show');
     }, 100);
 
-    // Auto remove após 4 segundos
+    // Auto remove apÃ³s 4 segundos
     setTimeout(() => {
         closeAlert(alertId);
     }, 4000);

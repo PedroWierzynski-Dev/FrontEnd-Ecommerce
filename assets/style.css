@@ -1,5 +1,5 @@
 /* ========================================
-   VARIÁVEIS DE CORES
+   VARIÃVEIS DE CORES
 ======================================== */
 :root {
     --cor-primaria: #1e3a5f;
@@ -137,7 +137,7 @@ body {
 
 .product-image {
     height: 220px;
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
     transition: transform 0.4s ease;
 }
@@ -146,15 +146,17 @@ body {
     transform: scale(1.05);
 }
 
-/* Ações do Card (Favoritar e Compartilhar) */
+/* AÃ§Ãµes do Card (Favoritar e Compartilhar) */
 .card-actions {
     position: absolute;
     top: 15px;
-    right: 15px;
+    left: 15px;
     display: flex;
     gap: 8px;
     opacity: 0;
     transition: opacity 0.3s ease;
+    box-shadow: 1px 2px #dbdbdb;
+    border-radius: 100%;
 }
 
 .product-card:hover .card-actions {
@@ -418,7 +420,7 @@ body {
 }
 
 /* ========================================
-   ANIMAÇÕES
+   ANIMAÃ‡Ã•ES
 ======================================== */
 @keyframes fadeInUp {
     from {
@@ -558,7 +560,7 @@ body {
 }
 
 /* ========================================
-   UTILITÁRIOS
+   UTILITÃRIOS
 ======================================== */
 .text-primary-custom {
     color: var(--cor-primaria) !important;

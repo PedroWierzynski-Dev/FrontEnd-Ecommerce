@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "image": "https://cdn.awsli.com.br/2500x2500/2657/2657296/produto/264090135/furadeira-impacto-1-2-127v-600w-tramontina-42410011-1a7cd405-cmdfkfymb7.jpg",
+        "title": "Furadeira de Impacto 600W",
+        "description_small": "Furadeira elétrica com função impacto.",
+        "description_full": "Furadeira de impacto 600W, ideal para trabalhos em madeira, metal e alvenaria. Possui empunhadura ergonômica, controle de velocidade e mandril de 13mm.",
+        "category": "Ferramentas Elétricas",
+        "price": 349.90
+    },
+    {
+        "id": 2,
+        "image": "https://a-static.mlcdn.com.br/1500x1500/parafusadeira-furadeira-12v-com-1-bateria-maleta-e-24-acessorios-fasterr-fst006/ddmaquinas/04483/a9b0b4b9712ccee61555ae4f58f6211d.jpeg",
+        "title": "Parafusadeira Bateria 12V",
+        "description_small": "Compacta e leve para pequenos reparos.",
+        "description_full": "Parafusadeira com bateria de 12V, carregamento rápido, duas velocidades e luz de LED integrada para melhor visibilidade em locais escuros.",
+        "category": "Ferramentas Elétricas",
+        "price": 259.90
+    },
+    {
+        "id": 3,
+        "image": "https://images.cws.digital/produtos/gg/55/73/serra-circular-7-14-6517355-1562341504570.jpg",
+        "title": "Serra Circular 1400W",
+        "description_small": "Serra para cortes rápidos e precisos.",
+        "description_full": "Serra circular de 1400W, com lâmina de 185mm e ajuste de profundidade e ângulo de corte. Ideal para madeira, MDF e compensado.",
+        "category": "Ferramentas Elétricas",
+        "price": 499.00
+    },
+    {
+        "id": 4,
+        "image": "https://i.zst.com.br/thumbs/51/38/18/-1529986281.jpg",
+        "title": "Martelete 1500W",
+        "description_small": "Ferramenta potente para demolição.",
+        "description_full": "Martele  de 1500W, com energia de impacto de 45J, indicada para quebra de concreto, pisos e estruturas robustas.",
+        "category": "Ferramentas Pesadas",
+        "price": 1299.90
+    },
+    {
+        "id": 5,
+        "image": "https://images.tcdn.com.br/img/img_prod/828968/pa_bico_c_cabo_n_4_3599_1_a26bfbc963e7163a000ae4d71907e6ad.png",
+        "title": "Pá de Construção",
+        "description_small": "Pá robusta para uso geral.",
+        "description_full": "Pá de aço carbono com cabo de madeira de 120cm, ideal para movimentação de areia, terra, cimento e entulho.",
+        "category": "Ferramentas Manuais",
+        "price": 79.90
+    },
+    {
+        "id": 6,
+        "image": "https://cdn.awsli.com.br/600x450/1606/1606237/produto/60689468/1151ee43-0f50-41fe-9ad8-5724b2840597-(2)-479c74984f.jpg",
+        "title": "Saco de Cimento 50kg",
+        "description_small": "Cimento de alta resistência estrutural.",
+        "description_full": "Cimento Portland de 50kg, ideal para concretagem, reboco e assentamento de blocos e tijolos, com excelente durabilidade.",
+        "category": "Materiais de Construção",
+        "price": 45.50
+    },
+    {
+        "id": 7,
+        "image": "https://cdn.awsli.com.br/600x450/1224/1224098/produto/64494946/570739b961.jpg",
+        "title": "Argamassa AC-II 20kg",
+        "description_small": "Indicada para assentamento de cerâmicas.",
+        "description_full": "Argamassa colante tipo AC-II, saco de 20kg, indicada para revestimentos cerâmicos em áreas internas e externas.",
+        "category": "Materiais de Construção",
+        "price": 28.90
+    },
+    {
+        "id": 8,
+        "image": "https://img.lojadomecanico.com.br/256/2/253/124460/Martelo-de-Unha-27-mm-Extra-Fortis-com-C-tramontina-407002271.JPG",
+        "title": "Martelo Unha 27mm",
+        "description_small": "Martelo para uso geral em carpintaria.",
+        "description_full": "Martelo de unha com cabeça em aço temperado e cabo de madeira resistente. Ideal para pregar, arrancar pregos e pequenos reparos.",
+        "category": "Ferramentas Manuais",
+        "price": 34.90
+    },
+    {
+        "id": 9,
+        "image": "https://cdn.b4c.inf.br/storage/minasferramentas/1000/chave-inglesa-cromada-abertura-34mm-ac-12-tramontina-41016512163196700525.jpg",
+        "title": "Chave Inglesa 12”",
+        "description_small": "Chave ajustável multiuso.",
+        "description_full": "Chave inglesa de 12 polegadas, fabricada em aço forjado de alta resistência, ideal para ajuste de porcas e parafusos de diferentes tamanhos.",
+        "category": "Ferramentas Manuais",
+        "price": 59.90
+    },
+    {
+        "id": 10,
+        "image": "https://cdn.awsli.com.br/800x800/32/32727/produto/250352650/escada-5-degraus-ynth40uuzb.jpg",
+        "title": "Escada Alumínio 5 Degraus",
+        "description_small": "Escada leve e resistente.",
+        "description_full": "Escada de alumínio com 5 degraus antiderrapantes, dobrável, suporta até 120kg, ideal para serviços domésticos e profissionais.",
+        "category": "Equipamentos de Apoio",
+        "price": 199.00
+    }
+]
